@@ -20,8 +20,8 @@ export default function CourseModal({ children }: { children: React.ReactNode })
 
   return (
     <>
-      <Popover className="relaive" onMouseEnter={open} onMouseLeave={close}>
-        <PopoverButton className="focus:outline-none hover:text-amber-50">
+      <Popover className="relative" onMouseEnter={open} onMouseLeave={close}>
+        <PopoverButton className="focus:outline-none hover:text-gray-400">
           {children}
         </PopoverButton>
         <PopoverPanel
@@ -34,9 +34,9 @@ export default function CourseModal({ children }: { children: React.ReactNode })
           ].join(" ")}
         >
           <div className="flex flex-col space-y-2 p-3">
-            <Link href="/dachdecker-mastery" className="hover:text-amber-50">Dachdecker Mastery</Link>
-            <Link href="/rinnen-masterclass" className="hover:text-amber-50">Rinnen Masterclass</Link>
-            <Link href="/dacheinteilung" className="hover:text-amber-50">Dacheinteilung</Link>
+            <Link href="/dachdecker-mastery" className="hover:text-gray-400">Dachdecker Mastery</Link>
+            <Link href="/rinnen-masterclass" className="hover:text-gray-400">Rinnen Masterclass</Link>
+            <Link href="/dacheinteilung" className="hover:text-gray-400">Dacheinteilung</Link>
           </div>
         </PopoverPanel>
       </Popover>
