@@ -1,6 +1,6 @@
 import Navbar from "./nav";
 import Image from "next/image";
-import logoImg from "../public/logo.png";
+import logoImg from "../../public/logo.png";
 import Link from "next/link";
 
 
