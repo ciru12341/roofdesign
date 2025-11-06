@@ -1,17 +1,30 @@
+import Hero from "../../components/hero";
 
 
 export default function Home() {
   return (
-    <main className="flex max-w-7xl mx-auto">
-      <section className="w-full flex">
-        <div className="flex flex-col text-left mt-10 space-y-2">
-          <h1 className="text-black text-4xl">Für Handwerker, Bauherren und Selfmade&apos;s:</h1>
-          <h2 className="text-black text-2xl">Finde mit nur 7 einfachen Fragen heraus, <br />ob du dein Dach selbst decken kannst</h2>
-          <p className="text-xl">Profitiere von unseren Anleitungen, Tipps und einem <span className="text-yellow-500 underline">unschlagbaren Support!</span> <br />Für dein erfolgreiches DIY-Dachprojekt. Erschaffe jetzt dein Traumdach ganz einfach selbst! </p>
+    <main className="mx-auto px-4 grid grid-cols-1 md:grid-cols-3 mt-10 mb-20 gap-y-12">
+      <section className="md:col-start-2 col-span-2 w-3/4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div className="lg:col-span-2">
+            <Hero className="lg:pr-4" />
+          </div>
+
+          <div>
+            <div className="aspect-video w-full overflow-hidden rounded-xl border shadow-sm bg-black">
+              <video
+                className="h-full w-full"
+                controls
+                preload="metadata"
+                playsInline
+                src="https://dach-selber-decken.de/wp-content/uploads/2025/04/Landingpage-1-2.mov#t=0.1"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         </div>
       </section>
     </main>
-
-    // srcs video: https://dach-selber-decken.de/wp-content/uploads/2025/04/Landingpage-1-2.mov#t=0.1
   );
 }

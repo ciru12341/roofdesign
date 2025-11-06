@@ -30,7 +30,7 @@ export default function CourseModal({ children }: { children: React.ReactNode })
           className={[
             "absolute left-0 top-full mt-2 w-max rounded-xl bg-white/30 text-black shadow-md backdrop-blur",
             "transition duration-150 ease-out ",
-            hovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1 pointer-events-none",
+            hovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1 pointer-events-none"
           ].join(" ")}
         >
           <div className="flex flex-col space-y-2 p-3">
