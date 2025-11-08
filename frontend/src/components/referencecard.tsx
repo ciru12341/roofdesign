@@ -5,19 +5,19 @@ import Link from "next/link";
 
 export default function Referencecard() {
   return (
-    <div className="flex flex-col rounded border p-4 mb-2">
+    <div className="flex flex-row flex-nowrap gap-6 overflow-x-auto overscroll-x-contain snap-x snap-mandatory py-2 px-4 [-webkit-overflow-scrolling:touch]">
       {Object.values(references).map((ref) => (
-        <div key={ref.id} className={`flex flex-col rounded border p-4 mb-2 w-3/4 ${ref.id % 2 === 0 ? "self-end" : "self-start"}`}>
+        <div key={ref.id} className={`flex w-[280px] shrink-0 snap-start flex-col rounded border p-4`}>
           <h2 className="text-3xl">{ref.name}</h2>
-          <p>{ref.description}</p>
+          <p className="">{ref.shortDescription}</p>
           {ref.video ? <Videocontainer src={ref.video} /> : null}
           {ref.image ? (
             <Image
               src={ref.image}
               alt={ref.name}
-              className="rounded border mt-2"
-              width={500}
-              height={300}
+              className="rounded mt-2"
+              width={200}
+              height={200}
             />
           ) : null}
           {ref.link ? (

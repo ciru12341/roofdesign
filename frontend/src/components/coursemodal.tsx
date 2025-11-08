@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 
 export default function CourseModal({ children }: { children: React.ReactNode }) {
   const [hovered, setHovered] = useState(false);
   const leaveTimer = useRef<number | null>(null);
+
 
   const open = () => {
     if (leaveTimer.current) window.clearTimeout(leaveTimer.current);
@@ -14,32 +15,38 @@ export default function CourseModal({ children }: { children: React.ReactNode })
 
   const close = () => {
     if (leaveTimer.current) window.clearTimeout(leaveTimer.current);
-
     leaveTimer.current = window.setTimeout(() => setHovered(false), 120);
   };
 
+  // During SSR and the first client render, render only the children
+  // toavoid hydration issues.
+
   return (
-    <>
-      <Popover className="relative" onMouseEnter={open} onMouseLeave={close}>
-        <PopoverButton className="focus:outline-none hover:text-gray-400">
-          {children}
-        </PopoverButton>
-        <PopoverPanel
-          static
-          anchor="bottom"
-          className={[
-            "absolute left-0 top-full mt-2 w-max rounded-xl bg-white/30 text-black shadow-md backdrop-blur",
-            "transition duration-150 ease-out ",
-            hovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1 pointer-events-none"
-          ].join(" ")}
-        >
-          <div className="flex flex-col space-y-2 p-3">
-            <Link href="/dachdecker-mastery" className="hover:text-gray-400">Dachdecker Mastery</Link>
-            <Link href="/rinnen-masterclass" className="hover:text-gray-400">Rinnen Masterclass</Link>
-            <Link href="/dacheinteilung" className="hover:text-gray-400">Dacheinteilung</Link>
-          </div>
-        </PopoverPanel>
-      </Popover>
-    </>
+    <Popover className="relative" onMouseEnter={open} onMouseLeave={close}>
+      <PopoverButton className="focus:outline-none hover:text-gray-400">
+        {children}
+      </PopoverButton>
+      <PopoverPanel
+        static
+        anchor="bottom"
+        className={[
+          "absolute left-0 top-full mt-2 w-max rounded-xl bg-white/30 text-black shadow-md backdrop-blur",
+          "transition duration-150 ease-out ",
+          hovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1 pointer-events-none",
+        ].join(" ")}
+      >
+        <div className="flex flex-col space-y-2 p-3">
+          <Link href="/dachdecker-mastery" className="hover:text-gray-400">
+            Dachdecker Mastery
+          </Link>
+          <Link href="/rinnen-masterclass" className="hover:text-gray-400">
+            Rinnen Masterclass
+          </Link>
+          <Link href="/dacheinteilung" className="hover:text-gray-400">
+            Dacheinteilung
+          </Link>
+        </div>
+      </PopoverPanel>
+    </Popover>
   );
 }
