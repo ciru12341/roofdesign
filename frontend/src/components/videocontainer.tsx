@@ -1,10 +1,10 @@
 
 
-export default function Videocontainer({ src, }: { src?: string }) {
+export default function Videocontainer({ src, className }: { src?: string, className?: string }) {
   return (
 
     <video
-      className="w-full max-w-[940px] aspect-video h-auto"
+      className={className ? className : `w-full max-w-[940px] aspect-video h-auto`}
       controls
       preload="metadata"
       playsInline

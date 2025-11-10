@@ -4,7 +4,7 @@ import Videocontainer from "./videocontainer";
 
 export default function Hero({ className }: { className: string }) {
   return (
-    <section id="start" className={`flex w-full flex-col sm:flex-row items-center gap-8 md:gap-12 lg:gap-16 ${className}`}>
+    <section id="start" className={`${className}`}>
       <div>
         <h1 className="mt-2 text-4xl md:text-5xl font-semibold leading-tight text-black">
           Dein Dach. Sauber geplant.

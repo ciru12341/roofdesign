@@ -5,28 +5,25 @@ import Link from "next/link";
 
 export default function Referencecard() {
   return (
-    <div className="flex flex-row flex-nowrap gap-6 overflow-x-auto overscroll-x-contain snap-x snap-mandatory py-2 px-4 [-webkit-overflow-scrolling:touch]">
+
+    <div className="flex flex-row flex-nowrap gap-5 px-4" role="list" aria-label="Kundenreferenzen">
       {Object.values(references).map((ref) => (
-        <div key={ref.id} className={`flex w-[280px] shrink-0 snap-start flex-col rounded border p-4`}>
-          <h2 className="text-3xl">{ref.name}</h2>
-          <p className="">{ref.shortDescription}</p>
-          {ref.video ? <Videocontainer src={ref.video} /> : null}
+        <article key={ref.id} data-id={ref.id} className={`flex w-[280px] shrink-0 flex-col rounded snap-start shadow-sm border p-4 justify-between`} role="listitem">
+          <div>
+            <h3 className="text-3xl font-semibold line-clamp-1">{ref.name}</h3>
+            <p className="mt-1 text-sm text-gray-700 line-clamp-3">{ref.shortDescription}</p>
+          </div>
+          {ref.video ? <Videocontainer src={ref.video} className="w-auto h-48 aspect-video" /> : null}
           {ref.image ? (
             <Image
               src={ref.image}
               alt={ref.name}
-              className="rounded mt-2"
-              width={200}
-              height={200}
+              className="w-auto h-48 rounded mt-2 object-cover"
+              width={400}
+              height={300}
             />
           ) : null}
-          {ref.link ? (
-            <Link href={ref.link} className="text-blue-500 hover:underline">
-              More Info
-            </Link>
-          ) : null}
-
-        </div>
+        </article>
       ))}
     </div>
   )
