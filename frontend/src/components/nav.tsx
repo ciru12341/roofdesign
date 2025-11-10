@@ -1,7 +1,6 @@
 import CourseModal from "./coursemodal";
 import { NavLink } from "./nav-link";
 
-
 export default function Navbar({ className }: { className?: string }) {
   return (
     <nav className={`${className ?? ""}`}>
@@ -16,13 +15,13 @@ export default function Navbar({ className }: { className?: string }) {
           <CourseModal>Unsere Kurse</CourseModal>
         </li>
         <li >
-          <NavLink href="/referenzen">Referenzen</NavLink>
+          <NavLink href="/erfahrungen">Erfahrungen</NavLink>
         </li>
         <li >
           <NavLink href="/wer-ist-thorsten-haeupl">Wer ist Thorsten Häupl?</NavLink>
         </li>
         <li >
-          <NavLink href="/kontaktformular">Noch Fragen?</NavLink>
+          <NavLink href="/kontaktformular"><span className="border border-amber-400 rounded-2xl p-2 bg-amber-400 text">Noch Fragen?</span></NavLink>
         </li>
       </ul>
     </nav>

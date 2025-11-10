@@ -1,7 +1,6 @@
 import references from "@/lib/referenzen";
 import Videocontainer from "./videocontainer";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Referencecard() {
   return (
