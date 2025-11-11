@@ -4,7 +4,7 @@ import { NavLink } from "./nav-link";
 export default function Navbar({ className }: { className?: string }) {
   return (
     <nav className={`${className ?? ""}`}>
-      <ul className="flex flex-wrap gap-3 md:gap-5 lg:gap-8 py-4 text-base md:text-lg font-medium">
+      <ul className="flex flex-wrap gap-3 md:gap-5 lg:gap-8 py-4 text-base md:text-lg font-medium ">
         <li>
           <NavLink href="/">Startseite</NavLink>
         </li>

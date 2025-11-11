@@ -7,7 +7,7 @@ export default function References() {
       <div className="flex flex-col justify-between w-64 shrink-0 px-4 border-r-2">
         <h1 className="text-3xl">Das sagen erfolgreiche Kunden von Roof Design, die ihr Dach selbst gedeckt haben</h1>
         <div className="text-center mb-10">
-          <Link href="/erfahrungen" className="text-black-500 hover:text-blue-500 border-2 rounded-2xl p-1"> Mehr erfahren</Link>
+          <Link href="/erfahrungen" scroll className="text-black-500 hover:text-blue-500 border-2 rounded-2xl p-1"> Mehr erfahren</Link>
         </div>
       </div>
       <Referencecard />

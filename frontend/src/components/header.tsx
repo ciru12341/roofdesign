@@ -20,7 +20,7 @@ export default function Header() {
           </div>
           <div />
         </div>
-        <div className="flex flex-1 items-end   ">
+        <div className="flex flex-1 items-end">
           <Navbar />
         </div>
       </div>
