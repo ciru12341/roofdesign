@@ -34,12 +34,11 @@ export default function Erfahrungen() {
           </div>
 
           <div className="md:basis-2/3 flex flex-col md:pl-6 md:text-left">
-            <h2 className="self-start inline-block text-3xl font-bold mb-4">
+            <h2 className="self-start inline-block text-3xl font-bold mb-4 sm:text-center">
               &quot;Die einzige Projektbetreuung, die dir wirklich hilft&quot;
               <hr className="border border-dashed mb-4" />
               <div className="flex flex-col items-center">
                 <h3 className="text-2xl font-semibold mb-4">Das darfst du nicht verpassen!</h3>
-
                 <div className="border flex flex-col items-center p-4 rounded-xl shadow-md w-full sm:w-1/2 mx-auto md:mx-0 text-base font-semibold">
                   <p>Exklusive Videokurse + exzellenter Support</p>
                   <p>=</p>
@@ -55,6 +54,9 @@ export default function Erfahrungen() {
                 </a>
               </div>
             </h2>
+
+
+
           </div>
         </div>
       </section>

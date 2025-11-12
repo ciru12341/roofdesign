@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
@@ -17,9 +18,6 @@ export default function CourseModal({ children }: { children: React.ReactNode })
     if (leaveTimer.current) window.clearTimeout(leaveTimer.current);
     leaveTimer.current = window.setTimeout(() => setHovered(false), 120);
   };
-
-  // During SSR and the first client render, render only the children
-  // toavoid hydration issues.
 
   return (
     <Popover className="relative" onMouseEnter={open} onMouseLeave={close}>
