@@ -1,6 +1,6 @@
 
 import Videocontainer from "@/components/videocontainer";
-import imageFront from "@/../public/masteryfront.png";
+import imageFront from "@/../public/images/masteryfront.png";
 import Image from "next/image";
 
 const videoUrl = "https://www.youtube.com/embed/c_joZpb8v2o";

@@ -1,6 +1,6 @@
 import Navbar from "./nav";
 import Image from "next/image";
-import logoImg from "../../public/logo2.png";
+import logoImg from "@/../public/images/logo2.png";
 import Link from "next/link";
 
 export default function Header() {

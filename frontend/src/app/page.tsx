@@ -9,7 +9,7 @@ export default function Home() {
       <Hero className="border flex w-full flex-col sm:flex-row items-center gap-8 md:gap-12 lg:gap-16" />
       <References />
       <div className="mt-10 border-4">
-        <h1 className="text-4xl font-bold mb-5">Häufig gestellte Fragen</h1>
+        <h1 className="text-4xl font-bold mb-5 " >Häufig gestellte Fragen</h1>
         {faq.map((item, index) => (
           <div key={index} className="mb-6 border">
             <h2 className="text-2xl font-semibold mb-2 border">{item[0]}</h2>
