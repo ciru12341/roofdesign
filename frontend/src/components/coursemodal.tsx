@@ -33,13 +33,13 @@ export default function CourseModal({ children }: { children: React.ReactNode })
         ].join(" ")}
       >
         <div className="flex flex-col space-y-2 p-3">
-          <Link href="/kurse/dachdecker-mastery" className="hover:text-gray-400">
+          <Link href="/dachdecker-mastery" className="hover:text-gray-400">
             Dachdecker Mastery
           </Link>
-          <Link href="/kurse/rinnen-masterclass" className="hover:text-gray-400">
+          <Link href="/rinnen-masterclass" className="hover:text-gray-400">
             Rinnen Masterclass
           </Link>
-          <Link href="/kurse/dacheinteilung" className="hover:text-gray-400">
+          <Link href="/dacheinteilung" className="hover:text-gray-400">
             Dacheinteilung
           </Link>
         </div>

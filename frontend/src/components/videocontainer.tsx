@@ -17,6 +17,7 @@ export default function Videocontainer({ src, className }: { src: string, classN
         preload="metadata"
         playsInline
         src={src}
+
       >
         Your browser does not support the video tag.
       </video>

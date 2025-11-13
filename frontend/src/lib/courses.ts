@@ -4,11 +4,13 @@ type Course = {
   imageUrl: string;
   link: string
   video?: string;
-  features: string[]
+  features: string[];
+  price: number;
+  price_new?: number;
 };
 
 const benefits = [
-  "Deinen persönlichen Ansprechpartner - wir lassen keinen im Regen stehen!",
+  "<span className=\"text-red-500 \">Deinen persönlichen Ansprechpartner</span> - wir lassen keinen im Regen stehen!",
   "Exzellenter Support für bessere Ergebnisse",
   "Eine individuelle Schritt-für-Schritt-Anleitung für deinen Erfolg",
   "Deinen Fahrplan, damit du immer den nächsten Schritt kennst",
@@ -27,7 +29,7 @@ const courses = {
     description:
       "Meistere die Kunst des Dachdeckens mit unserem umfassenden Kurs, der von den Grundlagen bis zu fortgeschrittenen Techniken alles abdeckt.",
     imageUrl: "/images/dmastery.png",
-    link: "/kurse/dachdecker-mastery",
+    link: "/dachdecker-mastery",
     video: "https://dach-selber-decken.de/wp-content/uploads/2024/07/Video-verkaufsseite-1.mov#t=0.1",
     features: [
       "Dein persönlicher Ansprechpartner und Bauleiter",
@@ -40,14 +42,17 @@ const courses = {
       "Zugriff auf Handy/Tablet oder TV",
       "Passwortgeschützte Software",
       "Als Werbungskosten steuerlich absetzbar!"
-    ]
+    ],
+    price: 1199,
+    price_new: 997
   },
+
   rinnenMasterclass: {
     title: "Rinnen Masterclass",
     description:
       "Lerne alles über die Installation und Wartung von Dachrinnen, um dein Dach optimal zu schützen und zu pflegen.",
     imageUrl: "",
-    link: "/kurse/rinnen-masterclass",
+    link: "/rinnen-masterclass",
     features: [
       "Zugriff zu den Videokursen",
       "Ca. 2h Material",
@@ -60,14 +65,16 @@ const courses = {
       "Zuteilung deines Bauleiters",
       "Support über WhatsApp, Anruf, Video-Call",
       "Als Werbungskosten steuerlich absetzbar!"
-    ]
+    ],
+    price: 465,
+    price_new: 310
   },
   dacheinteilung: {
     title: "Dacheinteilung leicht gemacht",
     description:
       "Verstehe die Prinzipien der Dacheinteilung und lerne, wie du dein Dach effizient und sicher planen kannst.",
     imageUrl: "",
-    link: "/kurse/dacheinteilung",
+    link: "/dacheinteilung",
     features:
       [
         "Dein persönlicher Ansprechpartner und Bauleiter",
@@ -79,7 +86,9 @@ const courses = {
         "Zugriff auf Handy, Tablet oder TV",
         "Passwortgeschützte Software",
         "Als Werbungskosten steuerlich absetzbar!"
-      ]
+      ],
+    price: 470,
+    price_new: 310
 
   }
 
@@ -184,7 +193,6 @@ const dachdeckerMasteryModules = {
     "Fertig montiert"
   ]
 };
-
 
 const rinnenMasterclassModules = {
   "Onboarding": [
