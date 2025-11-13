@@ -1,11 +1,10 @@
 import { courses } from "@/lib/courses"
 import Image from "next/image";
 
-export default function CourseOverview() {
-  const course = courses.dachdeckerMastery
+export default function CourseOverview({ course }: { course: typeof courses[keyof typeof courses] }) {
 
   return (
-    <div className="gap-4 w-full h-auto  p-4 mb-4 shadow-lg bg-stone-100">
+    <div id="parent" className="gap-4 w-full h-auto  p-4 mb-4 shadow-lg bg-stone-100">
       <div className="grid grid-cols-[60%_40%] mb-2">
         <div>
           <h2 className="text-2xl font-bold mb-4 underline decoration-2 underline-offset-2">Übersicht der {course.title}:</h2>
@@ -18,7 +17,7 @@ export default function CourseOverview() {
         </div>
         {course.imageUrl ? <Image src={course.imageUrl} alt={course.title} width={400} height={200} className="mb-2 rounded-lg shadow-lg " /> : null}
       </div>
-      <div id="price" className="text-center text-3xl font-bold mb-6 mt-6">
+      <div id="price" className="w-fit mx-auto text-3xl font-bold mb-6 mt-6">
         {course.price_new ? (
           <>
             <span className="text-red-600">{course.price_new}€</span>

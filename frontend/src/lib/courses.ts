@@ -9,6 +9,8 @@ type Course = {
   price_new?: number;
 };
 
+export type CourseModules = Record<string, string[]>;
+
 const benefits = [
   "<span className=\"text-red-500 \">Deinen persönlichen Ansprechpartner</span> - wir lassen keinen im Regen stehen!",
   "Exzellenter Support für bessere Ergebnisse",
@@ -51,7 +53,7 @@ const courses = {
     title: "Rinnen Masterclass",
     description:
       "Lerne alles über die Installation und Wartung von Dachrinnen, um dein Dach optimal zu schützen und zu pflegen.",
-    imageUrl: "",
+    imageUrl: "/images/rinnenfront.png",
     link: "/rinnen-masterclass",
     features: [
       "Zugriff zu den Videokursen",
@@ -94,7 +96,7 @@ const courses = {
 
 } satisfies Record<string, Course>;
 
-const dachdeckerMasteryModules = {
+const dachdeckerMasteryModules: CourseModules = {
   "Einarbeitung": [
     "Zugriff zum Mitgliederbereich",
     "Erstgespräch mit deinem Projektleiter",
@@ -192,9 +194,9 @@ const dachdeckerMasteryModules = {
     "Das letzte Stück",
     "Fertig montiert"
   ]
-};
+}
 
-const rinnenMasterclassModules = {
+const rinnenMasterclassModules: CourseModules = {
   "Onboarding": [
     "Zugriff zum Mitgliederbereich",
     "Erstgespräch mit deinem Projektleiter",
@@ -234,7 +236,7 @@ const rinnenMasterclassModules = {
     "Einhang, Traufblech montieren",
     "Ablauf in rinne brennen"
   ]
-};
+}
 
 
 
