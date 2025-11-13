@@ -1,71 +1,24 @@
 "use client";
-
-import { useState } from "react";
-import { questions } from "@/lib/quiz";
+import useQuiz from "@/hooks/useQuiz";
 
 export default function QuizPage() {
-  const [step, setStep] = useState<number>(0); // 0 = intro, 1..7 questions, 8 = abschluss
-  const [answers, setAnswers] = useState<Record<number, string | string[]>>({});
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [consent, setConsent] = useState(false);
-
-  const startQuiz = () => setStep(1);
-
-  const selectOption = (qId: number, value: string, multi?: boolean) => {
-    setAnswers(prev => {
-      const copy = { ...prev };
-      if (multi) {
-        const arr = new Set<string>(Array.isArray(copy[qId]) ? copy[qId] as string[] : []);
-        if (arr.has(value)) arr.delete(value); else arr.add(value);
-        copy[qId] = Array.from(arr);
-      } else {
-        copy[qId] = value;
-      }
-      return copy;
-    });
-  };
-
-  const currentQuestion = questions[step - 1];
-
-  const answered = currentQuestion
-    ? (currentQuestion.multi
-      ? Array.isArray(answers[currentQuestion.id]) && (answers[currentQuestion.id] as string[]).length > 0
-      : !!answers[currentQuestion.id])
-    : false;
-
-  const next = () => {
-    // require answer before continuing (except when moving from intro)
-    if (step >= 1 && step <= questions.length && !answered) return;
-
-    // if current is question 5 and answer is "nein" -> skip to final
-    if (step >= 1 && step <= questions.length) {
-      const q = questions[step - 1];
-      const ans = answers[q.id];
-      if (q.id === 5 && ans === "nein") {
-        setStep(8);
-        return;
-      }
-    }
-
-    if (step < questions.length) setStep(step + 1);
-    else setStep(8);
-  };
-
-  const prev = () => {
-    if (step > 1) setStep(step - 1);
-    else setStep(0);
-  };
-
-  const submit = () => {
-    if (!email) {
-      alert("Bitte gib eine gültige E-Mail-Adresse an.");
-      return;
-    }
-    // simulate submission -> later link to API of newsletter service
-    setSubmitted(true);
-    console.log("Quiz submission", { answers, email });
-  };
+  const {
+    step,
+    startQuiz,
+    selectOption,
+    currentQuestion,
+    answered,
+    next,
+    prev,
+    email,
+    setEmail,
+    submitted,
+    submit,
+    questions,
+    answers,
+    consent,
+    setConsent,
+  } = useQuiz();
 
   return (
     <main className="min-h-screen w-full bg-slate-50 px-4 py-8 text-slate-900 font-sans">
