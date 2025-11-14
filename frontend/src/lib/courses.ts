@@ -11,7 +11,7 @@ type Course = {
 
 export type CourseModules = Record<string, string[]>;
 
-const benefits = [
+const sellingPoints = [
   "<span className=\"text-red-500 \">Deinen persönlichen Ansprechpartner</span> - wir lassen keinen im Regen stehen!",
   "Exzellenter Support für bessere Ergebnisse",
   "Eine individuelle Schritt-für-Schritt-Anleitung für deinen Erfolg",
@@ -241,4 +241,4 @@ const rinnenMasterclassModules: CourseModules = {
 
 
 
-export { courses, benefits, dachdeckerMasteryModules, rinnenMasterclassModules };
+export { courses, sellingPoints, dachdeckerMasteryModules, rinnenMasterclassModules };

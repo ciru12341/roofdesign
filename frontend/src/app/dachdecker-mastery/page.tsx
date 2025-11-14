@@ -4,6 +4,7 @@ import CourseOverview from "@/components/courseoverview";
 import Modules from "@/components/modules";
 
 import { } from "@/lib/courses";
+import Benefits from "@/components/benefits";
 
 export default function DachdeckerMasteryPage() {
   const course = courses.dachdeckerMastery;
@@ -18,6 +19,7 @@ export default function DachdeckerMasteryPage() {
       </div>
       <CourseOverview course={course} />
       <Modules modules={modules}></Modules>
+      <Benefits timesaveings={2300} budgedSavings={12000} tools={550} />
     </main>
   );
 }
